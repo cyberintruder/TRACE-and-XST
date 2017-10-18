@@ -1,0 +1,22 @@
+$ curl -X TRACE example.com
+TRACE / HTTP/1.1
+User-Agent: curl/7.24.0
+Host: 127.0.0.1
+Accept: */*
+
+$curl -X TRACE -H "Cookie: seesionid=xxxx" example.com
+
+
+$ nc www.victim.com 80
+TRACE / HTTP/1.1
+Host: www.victim.com
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Tue, 31 Oct 2006 08:01:48 GMT
+Connection: close
+Content-Type: message/http
+Content-Length: 39
+
+TRACE / HTTP/1.1
+Host: www.victim.com
